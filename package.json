@@ -12,6 +12,8 @@
     "build": "snowpack build"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.3",
+    "entypo": "^2.2.1",
     "jquery": "^3.6.0",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "^2.2.7"

@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Go Collect</title>
+    <link rel="stylesheet" href="https://comics.gocollect.com/plugins/wm/assets/css/entypo.css">
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/socicon@3.0.5/css/socicon.min.css">
 </head>
-<body>
+
+<body class="font-rubik">
     <!-- Init The Project -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="flex mt-5 justify-between items-center">
+        <!-- NAVBAR START -->
+        <nav class="flex mt-10 justify-between items-center">
             <img class="w-36 md:w-60 h-full" src="assets/GoCollect.png" alt="">
-            <div class="hidden md:flex text-2xl tracking-wide space-x-8">
-                <a href="#">Sign</a>
+            <div class="hidden md:flex text-2xl tracking-wide font-extralight space-x-8">
+                <a href="#">Sign In</a>
                 <a href="#">Register</a>
                 <a href="#">Sell</a>
                 <a href="#">Comics</a>
@@ -24,7 +33,8 @@
                 <img class="w-8 h-full" src="assets/instagram.png" alt="">
                 <img class="w-8 h-full" src="assets/twitter.png" alt="">
             </div>
-            <div class="lg:hidden block transform transition ease-in hover:-translate-y-1 cursor-pointer" onclick="toggleNavMobile()">
+            <div class="lg:hidden block transform transition ease-in hover:-translate-y-1 cursor-pointer"
+                id="toggleNavMobile">
                 <img src="assets/menu-mobile-icon.svg" class=" w-6">
             </div>
         </nav>
@@ -43,8 +53,488 @@
                 <img class="w-5 h-full" src="assets/twitter.png" alt="">
             </div>
         </div>
+        <!-- NAVBAR END -->
+        <!-- TITLE & FORM ACTION -->
+        <div class="flex items-center space-y-8 h-96 justify-center flex-col">
+            <div class="text-center">
+                <h1 class="text-3xl tracking-wide text-green-600">Comic Book Price Guide</h1>
+                <h5 class="text-lg tracking-wide text-gray-600">The stock ticker for comic books. GoCollect track sales
+                    of comics graded by
+                    CGC & CBCS</h5>
+            </div>
+            <div class="flex shadow-md w-9/12 space-x-3">
+                <!-- CARD for Search -->
+                <div class="w-full border-2 rounded-md border-green-500 md:w-6/12">
+                    <div class="p-2 text-white flex items-center space-x-2 bg-green-500">
+                        <i class="icon-magnifying-glass"></i>
+                        <span>Search Comics</span>
+                    </div>
+                    <div class="p-2">
+                        <div class="mt-1 flex rounded-md shadow-sm">
+                            <div class="relative flex items-stretch flex-grow focus-within:z-10">
+                                <input type="text" name="search" id="search"
+                                    class="focus:ring-gray-300 focus:border-gray-300 block w-full rounded-none rounded-l-md  sm:text-sm border-gray-200"
+                                    placeholder="Title & Number">
+                            </div>
+                            <button
+                                class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border  text-sm font-medium rounded-r-md text-white border-green-500 bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-1 ">
+                                <span>Search</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD FOR CGC -->
+                <div class="w-full border-2 rounded-md border-blue-500 md:w-6/12">
+                    <div class="p-2 flex items-center justify-between bg-blue-500">
+                        <div class="flex text-white items-center  space-x-2">
+                            <i class="icon-archive"></i>
+                            <span>CGC Cert Scan/Lookup</span>
+                        </div>
+                        <i class="icon-help-with-circle text-white text-xs pb-2"></i>
+                    </div>
+                    <div class="p-2">
+                        <div class="mt-1 flex rounded-md shadow-sm">
+                            <div class="relative flex items-stretch flex-grow focus-within:z-10">
+                                <input type="text" name="search" id="search"
+                                    class="focus:ring-gray-300 focus:border-gray-300 block w-full rounded-none rounded-l-md  sm:text-sm border-gray-200"
+                                    placeholder="Scan label or type number">
+                            </div>
+                            <button
+                                class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border  text-sm  text-blue-500 font-bold border-gray-200 bg-white hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-1 ">
+                                <span>Lookup</span>
+                            </button>
+                            <button
+                                class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border  text-sm rounded-r-md text-blue-500 font-bold border-gray-200 bg-white hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-1 ">
+                                <i class="icon-camera"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TITLE & FORM ACTION END -->
+        <!-- WHAT'S SELLING -->
+        <div class="relative">
+            <div class="text-center text-2xl md:text-3xl space-x-3 font-normal flex justify-center text-green-600">
+                <i class="icon-line-graph"></i>
+                <h1>What's Selling?</h1>
+            </div>
+            <div class=" mx-auto mt-4 rounded">
+                <!-- Tabs -->
+                <ul id="tabs" class="inline-flex w-full justify-center px-1 pt-2">
+                    <!-- Modern Bronze Silver -->
+                    <li class="px-4 py-2 font-normal text-xs md:text-base text-gray-800 rounded-t opacity-50">
+                        <a href="#new">New</a></li>
+                    <li class="px-4 py-2 font-normal text-xs md:text-base text-gray-800 rounded-t opacity-50">
+                        <a href="#modern">Modern</a>
+                    </li>
+                    <li class="px-4 py-2 font-normal text-xs md:text-base text-gray-800 rounded-t opacity-50">
+                        <a href="#bronze">Bronze</a>
+                    <li
+                        class="px-4 py-2 font-normal -mb-px text-xs md:text-base  text-blue-500 border-b-2 border-blue-500 rounded-t opacity-50">
+                        <a id="default-tab" href="#silver">Silver</a>
+                    </li>
+                </ul>
+
+                <!-- Tab Contents -->
+                <div id="tab-contents" class="pr-10 pl-10">
+                    <div id="new">
+                        New Tab
+                    </div>
+                    <div id="modern" class="hidden">
+                        Modern tab
+                    </div>
+                    <div id="bronze" class="hidden">
+                        Bronze Tab
+                    </div>
+                    <div id="silver" class="hidden">
+                        <div id="slickTab1">
+                            <!-- Carousel Item #1 -->
+                            <div>
+                                <div class="flex flex-col items-center space-y-2">
+                                    <h2
+                                        class="bg-yellow-500 rounded-full w-7 h-7 flex justify-center items-center text-white text-xs font-semibold">
+                                        #1</h2>
+                                    <img class="w-40" src="assets/com1.jpg">
+                                    <div class="flex">
+                                        9.8 <i class="icon-calculator"></i> $160.000
+                                    </div>
+                                    <p class="text-blue-500">Amazing Spider-Man #50</p>
+                                    <button class="rounded-md border-2 p-2 space-x-2 text-blue-500"><i
+                                            class="icon-eye"></i>
+                                        <el>Watch</el>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Carousel Item #2 -->
+                            <div>
+                                <div class="flex flex-col items-center space-y-2">
+                                    <h2
+                                        class="bg-yellow-500 rounded-full w-7 h-7 flex justify-center items-center text-white text-xs font-semibold">
+                                        #2</h2>
+                                    <img class="w-40" src="assets/com1.jpg">
+                                    <div class="flex">
+                                        9.8 <i class="icon-calculator"></i> $160.000
+                                    </div>
+                                    <p class="text-blue-500">Amazing Spider-Man #50</p>
+                                    <button class="rounded-md border-2 p-2 space-x-2 text-blue-500"><i
+                                            class="icon-eye"></i>
+                                        <el>Watch</el>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Carousel Item #3 -->
+                            <div>
+                                <div class="flex flex-col items-center space-y-2">
+                                    <h2
+                                        class="bg-yellow-500 rounded-full w-7 h-7 flex justify-center items-center text-white text-xs font-semibold">
+                                        #3</h2>
+                                    <img class="w-40" src="assets/com1.jpg">
+                                    <div class="flex">
+                                        9.8 <i class="icon-calculator"></i> $160.000
+                                    </div>
+                                    <p class="text-blue-500">Amazing Spider-Man #50</p>
+                                    <button class="rounded-md border-2 p-2 space-x-2 text-blue-500"><i
+                                            class="icon-eye"></i>
+                                        <el>Watch</el>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Carousel Item #4 -->
+                            <div>
+                                <div class="flex flex-col items-center space-y-2">
+                                    <h2
+                                        class="bg-yellow-500 rounded-full w-7 h-7 flex justify-center items-center text-white text-xs font-semibold">
+                                        #4</h2>
+                                    <img class="w-40" src="assets/com1.jpg">
+                                    <div class="flex">
+                                        9.8 <i class="icon-calculator"></i> $160.000
+                                    </div>
+                                    <p class="text-blue-500">Amazing Spider-Man #50</p>
+                                    <button class="rounded-md border-2 p-2 space-x-2 text-blue-500"><i
+                                            class="icon-eye"></i>
+                                        <el>Watch</el>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- WHAT'S SELLING END -->
     </div>
+    <!-- BECOME A MEMBER -->
+    <div class="bg-gray-50 space-y-8 py-10">
+        <h1 class="text-center text-3xl text-green-500">Become A Member</h1>
+        <div class="w-full space-y-1 my-4">
+            <div x-data={show:false} class="rounded-sm">
+                <div class="border border-b-0 bg-gray-100 px-6 py-3" id="headingOne">
+                    <button @click="show=!show" class="space-x-4 hover:text-blue-700 focus:outline-none flex"
+                        type="button">
+                        <i class="icon-chevron-right"></i>
+                        <el>How It Works</el>
+                    </button>
+                </div>
+                <div x-show="show" class="border border-b-0 px-10 py-6">
+                    We monitor the fire hose of online comic book sales across various marketplaces and report on the
+                    sales of CGC and CBCS graded books in our comics price guide. We only monitor actual sales; not just
+                    sale listings. For each sale discovered, we match it to the specific comic in our massive database
+                    (which also includes variant covers and printings). As we match the sale we record the comic grading
+                    company, holder/label type and the assigned grade. Finally, we gather supportive information about
+                    the individual sale including when and where it was sold, how the sale can be identified at the
+                    remote venue, the format of the sale (auction, fixed price, etc.), the images that were used for the
+                    sale, descriptive sale information (i.e. auction titles) and more.
+                </div>
+            </div>
+
+            <div x-data={show:false} class="rounded-sm">
+                <div class="border border-b-0 bg-gray-100 px-6 py-3" id="headingOne">
+                    <button @click="show=!show" class="space-x-4 hover:text-blue-700 focus:outline-none flex"
+                        type="button">
+                        <i class="icon-chevron-right"></i>
+                        <el>We employ actual humans</el>
+                    </button>
+                </div>
+                <div x-show="show" class="border border-b-0 px-10 py-6">
+                    Although we use API technologies to pull in giant piles of sales data, we employ humans to organize
+                    that data and assign it to individual comics in our database. Therefore, mistakes can occasionally
+                    occur. For such instances, we've integrated a flagging system. Any member can flag a sale that they
+                    feel may have been assigned in error. We'll take a second look at the sales assignment and make
+                    corrections as needed.
+                </div>
+            </div>
+            <div x-data={show:false} class="rounded-sm">
+                <div class="border border-b-0 bg-gray-100 px-6 py-3" id="headingOne">
+                    <button @click="show=!show" class="space-x-4 hover:text-blue-700 focus:outline-none flex"
+                        type="button">
+                        <i class="icon-chevron-right"></i>
+                        <el>Qualifications and reported prices</el>
+                    </button>
+                </div>
+                <div x-show="show" class="border border-b-0 px-10 py-6">
+                    We follow a strict set of guidelines in order to deliver the best possible comic book values. We
+                    make every possible effort to only report on the price paid for individual comics. Some examples:
+                </div>
+            </div>
+            <div x-data={show:false} class="rounded-sm">
+                <div class="border border-b-0 bg-gray-100 px-6 py-3" id="headingOne">
+                    <button @click="show=!show" class="space-x-4 hover:text-blue-700 focus:outline-none flex"
+                        type="button">
+                        <i class="icon-chevron-right"></i>
+                        <el>Examples</el>
+                    </button>
+                </div>
+                <div x-show="show" class="border border-b-0 px-10 py-6">
+                    <ul class="list-disc pl-3" style="font-size:0.875rem">
+                        <li>When more than one comic is offered in a particular listing, the entire sale is disregarded.
+                        </li>
+                        <li>If a comic is purchased for an amount less than it's fixed price (i.e. a "best offer" is
+                            accepted) we report the price offered/paid.</li>
+                        <li>If the holder/label is damaged the sale is disregarded.</li>
+                        <li>We do not consider shipping costs in our calculations.</li>
+                        <li>When a "buyer fee" is involved, it gets added to the sale price.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-12 flex md:flex-row space-y-10 md:space-y-0 flex-col justify-center md:space-x-8">
+            <div class="md:w-3/12 space-y-6 p-10 border-2 border-blue-300 rounded-md">
+                <div>
+                    <h1 class="font-rubik text-blue-400 text-xl">FREE MEMBERSHIP</h1>
+                    <p class="font-rubik text-sm text-gray-500">Register to access additional features</p>
+                </div>
+
+                <div>
+                    <ul class="space-y-4 font-medium">
+                        <li class="flex space-x-4"><img src="assets/section5-check-blue.svg"><span>High-Level Sales
+                                Data</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-blue.svg"><span>Watch Unlimited
+                                Comics</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-blue.svg"><span>Comic Analyzer</span>
+                        </li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-blue.svg"><span>Comic Modeler</span>
+                        </li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-blue.svg"><span>Comic Lists</span>
+                        </li>
+                        <li class="flex space-x-4"><img src="assets/section5-cross.svg"><span>Detailed Watch
+                                Alerts</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-cross.svg"><span>Solid Prices
+                                Realized*</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-cross.svg"><span>Full Size Sales
+                                Images*</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-cross.svg"><span>Links to Original
+                                Listings</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-cross.svg"><span>Money Back
+                                Guarantee*</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-cross.svg"><span>Cancel Anytime - Hassle
+                                Free</span></li>
+                    </ul>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="">
+                        <h2 class="text-gray-600 text-2xl">$0</h2>
+                        <h5 class="text-sm text-gray-600">No credit card required</h5>
+                    </div>
+                    <button class="p-2 px-4 bg-blue-500 shadow-lg rounded-md text-white">
+                        <el>Get Started</el><i class="icon-chevron-right"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="md:w-3/12 space-y-6 p-10 border-2 bg-green-400 border-green-300 rounded-md">
+                <div>
+                    <h1 class="font-rubik text-white text-xl">PREMIUM MEMBERSHIP</h1>
+                    <p class="font-rubik text-sm text-white">Register to access additional features</p>
+                </div>
+                <div>
+                    <ul class="space-y-4 text-white font-medium">
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>High-Level Sales
+                                Data</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Watch Unlimited
+                                Comics</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Comic
+                                Analyzer</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Comic Modeler</span>
+                        </li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Comic Lists</span>
+                        </li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Detailed Watch
+                                Alerts</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Solid Prices
+                                Realized*</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Full Size Sales
+                                Images*</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Links to Original
+                                Listings</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Money Back
+                                Guarantee*</span></li>
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Cancel Anytime -
+                                Hassle Free</span></li>
+                    </ul>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="">
+                        <h2 class="text-white text-2xl">Only $9/month</h2>
+                        <h5 class="text-sm text-white">or $89/year - Save 17%</h5>
+                    </div>
+                    <button class="p-2 px-4 bg-white shadow-lg rounded-md text-green-500">
+                        <el>Get Started</el><i class="icon-chevron-right"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- BECOME A MEMBER END -->
+    <!-- BLOG -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="py-5">
+            <div class="text-center font-normal">
+                <h1 class="text-2xl md:text-3xl  text-green-600">Amazing Reads</h1>
+                <p class=" text-gray-400">Check out multiple new posts and commentary daily</p>
+            </div>
+            <div id="slickBlog">
+                <!-- Carousel Item #1 -->
+                <div class="p-8">
+                    <div class="flex flex-col items-center space-y-2">
+                        <img class="mx-auto" src="assets/blog1.jpg">
+                        <p class="m-0"><small class="text-gray-500"><em>Aug 14, 2021</em> &nbsp; As we’ve all seen, the
+                                collectibles market has been thriving for the last year during the worldwide pandemic.
+                                Now,
+                                to be more specific, the comic market has been on an upward rise…
+                                The post Are We Hitting a Comic Wall? appeared first on GoCollect.
+                            </small>
+                        </p>
+
+                    </div>
+                </div>
+                <!-- Carousel Item #2 -->
+                <div class="p-8">
+                    <div class="flex flex-col items-center space-y-2">
+                        <img class="mx-auto" src="assets/blog1.jpg">
+                        <p class="m-0"><small class="text-gray-500"><em>Aug 14, 2021</em> &nbsp; As we’ve all seen, the
+                                collectibles market has been thriving for the last year during the worldwide pandemic.
+                                Now,
+                                to be more specific, the comic market has been on an upward rise…
+                                The post Are We Hitting a Comic Wall? appeared first on GoCollect.
+                            </small>
+                        </p>
+
+                    </div>
+                </div>
+                <!-- Carousel Item #3 -->
+                <div class="p-8">
+                    <div class="flex flex-col items-center space-y-2">
+                        <img class="mx-auto" src="assets/blog1.jpg">
+                        <p class="m-0"><small class="text-gray-500"><em>Aug 14, 2021</em> &nbsp; As we’ve all seen, the
+                                collectibles market has been thriving for the last year during the worldwide pandemic.
+                                Now,
+                                to be more specific, the comic market has been on an upward rise…
+                                The post Are We Hitting a Comic Wall? appeared first on GoCollect.
+                            </small>
+                        </p>
+
+                    </div>
+                </div>
+                <!-- Carousel Item #4 -->
+                <div class="p-8">
+                    <div class="flex flex-col items-center space-y-2">
+                        <img class="mx-auto" src="assets/blog1.jpg">
+                        <p class="m-0"><small class="text-gray-500"><em>Aug 14, 2021</em> &nbsp; As we’ve all seen, the
+                                collectibles market has been thriving for the last year during the worldwide pandemic.
+                                Now,
+                                to be more specific, the comic market has been on an upward rise…
+                                The post Are We Hitting a Comic Wall? appeared first on GoCollect.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BLOG END -->
+    <!-- FOOTER -->
+    <footer class="bg-gray-50 py-5">
+        <div class="max-w-7xl space-y-4 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex  justify-between">
+                <div class="flex w-5/12 space-x-8 text-blue-500">
+                    <div class="w-6/12 flex flex-col">
+                        <a href="#">
+                            Video Games Price Guide
+                        </a>
+                        <a href="#">
+                            Concert Posters Price Guide
+                        </a>
+                        <a href="#">
+                            SWAG Shop
+                        </a>
+                        <a href="#">
+                            Blog
+                        </a>
+                        <a href="#">
+                            Comic Retailer Program
+                        </a>
+                        <a href="#">
+                            Comic Grading
+                        </a>
+                    </div>
+                    <div class="w-6/12 flex flex-col">
+                        <a href="#">
+                            Careers @ GoCollect
+                        </a>
+                        <a href="#">
+                            Contact
+                        </a>
+                        <a href="#">
+                            Sell Collection
+                        </a>
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+                        <a href="#">
+                            Terms of Use
+                        </a>
+
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="space-x-2 text-gray-400">
+                        <i class="socicon-facebook"></i>
+                        <i class="socicon-instagram"></i>
+                        <i class="socicon-twitter"></i>
+                        <i class="socicon-pinterest"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="font-semibold text-gray-500 text-xs">Copyright c 2010-2021 GoCollect.com & GoCollect, LLC.</h3>
+                        <p class="text-xs text-gray-400">All Rights Reserved. All Item images are used solely for identification purposes.<br>All rights to item images reserved by their respective copyright holders.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-end">
+                        <img class="h-full" src="assets/comodo_secure_seal_113x59_transp.png" alt="">
+                        <img class="h-full" src="assets/blue-seal-200-42-gocollect-807244.png" alt="">
+
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="text-sm font-bold text-gray-400">Friends of GoCollect</p>
+                <p class="text-xs text-gray-300">Some data courtesy of the <a class="text-blue-500" href="#">Grand Comic
+                        Database</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+
     <script src="index.js" type="module"></script>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
 </body>
+
 </html>

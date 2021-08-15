@@ -4,10 +4,17 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'rubik': ["'Rubik'", 'sans-serif']
+      }
+    },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+
+  ],
 }

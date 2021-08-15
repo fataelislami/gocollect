@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmscout</title>
+    <meta charset="utf-8">
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+    <style>
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+        }
+
+        .slick-dots>li {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .slick-dots>li.slick-active>a {
+            background: #16bc9e;
+            color: #fff !important;
+            z-index: 99999;
+            width: 31px;
+            height: 31px;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="relative w-full mx-auto">
+        <nav class="flex p-5 mr-5 ml-5 justify-between items-center">
+
+            <div class="">
+                <img src="assets/logo.png" class="w-36 lg:w-52"></img>
+            </div>
+            <div class="hidden md:hidden font-medium lg:block space-x-8">
+                <a href="#">Sell & Buy</a>
+                <a href="#">How To Sell</a>
+                <a href="#">How To Buy</a>
+                <a href="#">Why Farmscout?</a>
+                <button class="btn pt-2 pb-2 w-32 border-2 border-green-400 text-green-400 rounded-full">Get The
+                    App</button>
+            </div>
+            <div class="md:block lg:hidden flex items-center space-x-2">
+                <button class="btn pt-2 pb-2 text-xs w-24 border-2 border-green-400 text-green-400 rounded-full">Get The
+                    App</button>
+                <button class="lg:hidden inline-block md:hidden w-8 h-8 bg-gray-200 text-gray-600 p-1">
+                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+
+        </nav>
+        <div class="absolute left-0 right-0 top-24 z-20 md:top-40 lg:top-48 bottom-0 text-center">
+            <div class="relative text-2xl md:text-5xl font-bold lg:text-6xl">
+                <h1>Sell and Buy Farmland</h1>
+                <h1>Quickly and Easily</h1>
+            </div>
+            <p class="relative text-xs md:text-base lg:text-base mx-auto mt-3 md:mt-5 lg:mt-10">Get the convenience of
+                selling and buying farmland only<br>throudh the Farmscout application.</p>
+            <div class="mt-3 md:mt-5 lg:mt-10">
+                <button
+                    class="btn w-28 p-2 text-xs lg:w-40 lg:pt-3 lg:pb-3 lg:text-base rounded-full text-white bg-green-500">Looking
+                    to Sell?</button>
+                <button
+                    class="btn w-28 p-2 text-xs lg:w-40 lg:pt-3 lg:pb-3 lg:text-base rounded-full text-white bg-indigo-500">Looking
+                    to Buy?</button>
+
+            </div>
+        </div>
+        <div class="relative top-10  lg:top-10">
+            <img src="assets/hero.png" class="max-w-full">
+        </div>
+
+    </div>
+    <!-- Section -->
+    <div class="relative pt-16">
+        <h1 class="text-2xl lg:text-4xl font-semibold text-center">How to Sell & Buy<br>Farmland on Farmscout</h1>
+        <div class=" mx-auto mt-4 rounded">
+            <!-- Tabs -->
+            <ul id="tabs" class="inline-flex w-full justify-center lg:space-x-9 px-1 pt-2 ">
+                <li
+                    class="px-4 py-2 -mb-px text-xs lg:text-base font-bold text-gray-800 border-b-2 border-green-400 rounded-t opacity-50">
+                    <a id="default-tab" href="#first">Are you a Seller?</a></li>
+                <li class="px-4 py-2 font-bold text-xs lg:text-base text-gray-800 rounded-t opacity-50"><a
+                        href="#second">Are you a
+                        Buyer?</a>
+                </li>
+            </ul>
+
+            <!-- Tab Contents -->
+            <div id="tab-contents" class="pr-10 pl-10">
+                <div id="first">
+                    <div id="slickTab1">
+                        <!-- Carousel Item #1 -->
+                        <div>
+                            <div
+                                class="flex flex-wrap items-center -mx-2 my-5 flex-col-reverse md:flex-row md:-my-16 overflow-hidden">
+
+                                <div
+                                    class="my-2 px-2 w-full mt-10 md:mt-0 md:w-1/2 overflow-hidden flex items-center justify-center">
+                                    <!-- Column Content -->
+                                    <div class="flex space-x-3 items-center md:space-x-12">
+                                        <span class="text-8xl md:text-9xl font-bold text-green-200">1</span>
+                                        <div class="flex flex-col space-y-5 w-64">
+                                            <h2 class="text-lg font-semibold leading-snug">Submit<br>farm details fastly
+                                            </h2>
+                                            <p class="text-xs text-gray-500">Submit the basic details of you and your
+                                                farm online. You can also make a quick call to submit details. Our team
+                                                will carry out the rest of you</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div
+                                    class="-my-24 md:my-2 p-20 px-2 w-full md:w-1/2 overflow-hidden flex justify-center">
+                                    <!-- Column Content -->
+                                    <img src="assets/section2-image.png" class="md:w-9/12 md:h-full h-44">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Carousel Item #2 -->
+                        <div>
+                            <div
+                                class="flex flex-wrap items-center -mx-2 my-5 flex-col-reverse md:flex-row md:-my-16 overflow-hidden">
+
+                                <div
+                                    class="my-2 px-2 w-full mt-10 md:mt-0 md:w-1/2 overflow-hidden flex items-center justify-center">
+                                    <!-- Column Content -->
+                                    <div class="flex space-x-3 items-center md:space-x-12">
+                                        <span class="text-8xl md:text-9xl font-bold text-green-200">2</span>
+                                        <div class="flex flex-col space-y-5 w-64">
+                                            <h2 class="text-lg font-semibold leading-snug">Submit<br>farm details fastly
+                                            </h2>
+                                            <p class="text-xs text-gray-500">Submit the basic details of you and your
+                                                farm online. You can also make a quick call to submit details. Our team
+                                                will carry out the rest of you</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div
+                                    class="-my-24 md:my-2 p-20 px-2 w-full md:w-1/2 overflow-hidden flex justify-center">
+                                    <!-- Column Content -->
+                                    <img src="assets/section2-image.png" class="md:w-9/12 md:h-full h-44">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Carousel Item #3 -->
+                        <div>
+                            <div
+                                class="flex flex-wrap items-center -mx-2 my-5 flex-col-reverse md:flex-row md:-my-16 overflow-hidden">
+
+                                <div
+                                    class="my-2 px-2 w-full mt-10 md:mt-0 md:w-1/2 overflow-hidden flex items-center justify-center">
+                                    <!-- Column Content -->
+                                    <div class="flex space-x-3 items-center md:space-x-12">
+                                        <span class="text-8xl md:text-9xl font-bold text-green-200">3</span>
+                                        <div class="flex flex-col space-y-5 w-64">
+                                            <h2 class="text-lg font-semibold leading-snug">Submit<br>farm details fastly
+                                            </h2>
+                                            <p class="text-xs text-gray-500">Submit the basic details of you and your
+                                                farm online. You can also make a quick call to submit details. Our team
+                                                will carry out the rest of you</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div
+                                    class="-my-24 md:my-2 p-20 px-2 w-full md:w-1/2 overflow-hidden flex justify-center">
+                                    <!-- Column Content -->
+                                    <img src="assets/section2-image.png" class="md:w-9/12 md:h-full h-44">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Carousel Item #4 -->
+                        <div>
+                            <div
+                                class="flex flex-wrap items-center -mx-2 my-5 flex-col-reverse md:flex-row md:-my-16 overflow-hidden">
+
+                                <div
+                                    class="my-2 px-2 w-full mt-10 md:mt-0 md:w-1/2 overflow-hidden flex items-center justify-center">
+                                    <!-- Column Content -->
+                                    <div class="flex space-x-3 items-center md:space-x-12">
+                                        <span class="text-8xl md:text-9xl font-bold text-green-200">4</span>
+                                        <div class="flex flex-col space-y-5 w-64">
+                                            <h2 class="text-lg font-semibold leading-snug">Submit<br>farm details fastly
+                                            </h2>
+                                            <p class="text-xs text-gray-500">Submit the basic details of you and your
+                                                farm online. You can also make a quick call to submit details. Our team
+                                                will carry out the rest of you</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div
+                                    class="-my-24 md:my-2 p-20 px-2 w-full md:w-1/2 overflow-hidden flex justify-center">
+                                    <!-- Column Content -->
+                                    <img src="assets/section2-image.png" class="md:w-9/12 md:h-full h-44">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Carousel Item #5 -->
+                        <div>
+                            <div
+                                class="flex flex-wrap items-center -mx-2 my-5 flex-col-reverse md:flex-row md:-my-16 overflow-hidden">
+
+                                <div
+                                    class="my-2 px-2 w-full mt-10 md:mt-0 md:w-1/2 overflow-hidden flex items-center justify-center">
+                                    <!-- Column Content -->
+                                    <div class="flex space-x-3 items-center md:space-x-12">
+                                        <span class="text-8xl md:text-9xl font-bold text-green-200">5</span>
+                                        <div class="flex flex-col space-y-5 w-64">
+                                            <h2 class="text-lg font-semibold leading-snug">Submit<br>farm details fastly
+                                            </h2>
+                                            <p class="text-xs text-gray-500">Submit the basic details of you and your
+                                                farm online. You can also make a quick call to submit details. Our team
+                                                will carry out the rest of you</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div
+                                    class="-my-24 md:my-2 p-20 px-2 w-full md:w-1/2 overflow-hidden flex justify-center">
+                                    <!-- Column Content -->
+                                    <img src="assets/section2-image.png" class="md:w-9/12 md:h-full h-44">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Carousel Item #6 -->
+                        <div>
+                            <div
+                                class="flex flex-wrap items-center -mx-2 my-5 flex-col-reverse md:flex-row md:-my-16 overflow-hidden">
+
+                                <div
+                                    class="my-2 px-2 w-full mt-10 md:mt-0 md:w-1/2 overflow-hidden flex items-center justify-center">
+                                    <!-- Column Content -->
+                                    <div class="flex space-x-3 items-center md:space-x-12">
+                                        <span class="text-8xl md:text-9xl font-bold text-green-200">6</span>
+                                        <div class="flex flex-col space-y-5 w-64">
+                                            <h2 class="text-lg font-semibold leading-snug">Submit<br>farm details fastly
+                                            </h2>
+                                            <p class="text-xs text-gray-500">Submit the basic details of you and your
+                                                farm online. You can also make a quick call to submit details. Our team
+                                                will carry out the rest of you</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div
+                                    class="-my-24 md:my-2 p-20 px-2 w-full md:w-1/2 overflow-hidden flex justify-center">
+                                    <!-- Column Content -->
+                                    <img src="assets/section2-image.png" class="md:w-9/12 md:h-full h-44">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="second" class="hidden">
+                    Second tab
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Section -->
+    <div class="relative pt-40">
+        <div class="flex md:space-x-32 flex-col md:flex-row  justify-center">
+            <div class="flex w-full md:w-1/2 flex-col">
+                <h2
+                    class="p-2 bg-green-600 ml-auto float-right text-4xl pt-3 pb-3 font-semibold pr-5 pl-5 text-white w-36 text-center rounded-lg">
+                    Seller</h2>
+                <ul class="relative mt-14 text-lg text-right font-semibold space-y-4">
+                    <div class="absolute left-0 -top-11 w-11 overflow-hidden inline-block">
+                        <div
+                            class="h-16 bg-gradient-to-r from-green-300 opacity-10 to-white -rotate-45 transform origin-bottom-right">
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-green-300 to-white opacity-10"></div>
+                    <li class="border-r-8 border-green-400 pr-6">Submit farmland online</li>
+                    <li class="border-r-8 border-green-400 pr-6">Book your farmland verification</li>
+                    <li class="border-r-8 border-green-400 pr-6">Professional presentation</li>
+                    <li class="border-r-8 border-green-400 pr-6">Track status of farmlands</li>
+                    <li class="border-r-8 border-green-400 pr-6">Negotiate price</li>
+                    <li class="border-r-8 border-green-400 pr-6">Secure transaction</li>
+                </ul>
+
+            </div>
+            <div class="flex w-full md:w-1/2  flex-col">
+                <h2
+                    class="p-2 bg-yellow-300 mr-auto text-4xl pt-3 pb-3 font-semibold pr-5 pl-5 text-black w-36 text-center rounded-lg">
+                    Buyer</h2>
+                <ul class="relative mt-14 text-lg text-left font-semibold space-y-4">
+                    <div class="absolute inset-0 bg-gradient-to-r from-white to-yellow-300 opacity-5"></div>
+                    <li class="border-l-8 border-yellow-400 pl-6">Browse and find farmlands</li>
+                    <li class="border-l-8 border-yellow-400 pl-6">Virtual tour of farmlands</li>
+                    <li class="border-l-8 border-yellow-400 pl-6">Book for a direct visit</li>
+                    <li class="border-l-8 border-yellow-400 pl-6">Finalize to buy</li>
+                    <li class="border-l-8 border-yellow-400 pl-6">Negotiate price</li>
+                    <li class="border-l-8 border-yellow-400 pl-6">Secure transaction</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Section -->
+    <div class="relative pt-52 p-10 md:p-32">
+        <div class="flex justify-center flex-col-reverse md:flex-row">
+            <div class="w-full md:w-1/2">
+                <div class="relative text-center md:text-left mb-10">
+                    <p class="relative md:left-14 text-green-400 font-semibold text-sm">Are you a Seller?</p>
+                    <h1 class="relative md:left-14 text-4xl leading-10 font-bold">Sell your farmland<br>seamlessly</h1>
+                </div>
+                <div class="relative mb-10 md:hidden block">
+                    <img src="assets/section4-image.png" class="mx-auto md:mx-0 relative md:left-14 w-56 md:w-80">
+                </div>
+                <div class="flex flex-col space-y-10">
+                    <div class="relative flex space-x-5 items-start">
+                        <img src="assets/section4-icon1.png" class="h-8 left-3 absolute w-8" alt="">
+                        <div class="relative left-10 flex flex-col space-y-4 w-8/12">
+                            <h5 class="text-lg font-bold ">Selling is no more a tough task</h5>
+                            <div class="w-16 border-b-4 rounded-lg border-green-400 "></div>
+                            <p class="text-xs text-gray-400 leading-5 font-medium">Don't lost your preciouse money on
+                                distrustful agengs. Don't waste your valuable time on
+                                several inquieres.Don't put too much effort into selling advertisements. Don't let
+                                multiple
+                                inspections steal yur valuable time. We're here to make your selling process less
+                                stressful.
+                                We work on your behalf to close the best deals much faster than ever.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="relative md:block hidden mb-10">
+                    <img src="assets/section4-image.png" class="mx-auto md:mx-0 relative md:left-14 w-56 md:w-80">
+                </div>
+
+            </div>
+        </div>
+        <div class="grid grid-cols-12">
+            <div class="col-span-12 md:col-span-6 space-y-10">
+                <div class="relative flex space-x-5 items-start">
+                    <img src="assets/section4-icon1.png" class="h-8 left-3 absolute w-8" alt="">
+                    <div class="relative left-10 flex flex-col space-y-4 w-8/12">
+                        <h5 class="text-lg font-bold ">Gain Professional Presentation</h5>
+                        <div class="w-16 border-b-4 rounded-lg border-green-400 "></div>
+                        <p class="text-xs text-gray-400 leading-5 font-medium">Don't lost your preciouse money on
+                            distrustful agengs. Don't waste your valuable time on
+                            several inquieres.Don't put too much effort into selling advertisements. Don't let
+                            multiple
+                            inspections steal yur valuable time. We're here to make your selling process less
+                            stressful.
+                            We work on your behalf to close the best deals much faster than ever.</p>
+                    </div>
+                </div>
+                <div class="relative flex space-x-5 items-start">
+                    <img src="assets/section4-icon1.png" class="h-8 left-3 absolute w-8" alt="">
+                    <div class="relative left-10 flex flex-col space-y-4 w-8/12">
+                        <h5 class="text-lg font-bold ">Reach global buyers</h5>
+                        <div class="w-16 border-b-4 rounded-lg border-green-400 "></div>
+                        <p class="text-xs text-gray-400 leading-5 font-medium">Don't lost your preciouse money on
+                            distrustful agengs. Don't waste your valuable time on
+                            several inquieres.Don't put too much effort into selling advertisements. Don't let
+                            multiple
+                            inspections steal yur valuable time. We're here to make your selling process less
+                            stressful.
+                            We work on your behalf to close the best deals much faster than ever.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 space-y-10">
+                <div class="relative flex space-x-5 items-start">
+                    <img src="assets/section4-icon1.png" class="h-8 left-3 absolute w-8" alt="">
+                    <div class="relative left-10 flex flex-col space-y-4 w-8/12">
+                        <h5 class="text-lg font-bold ">Stop Struggling! Leave the hassle to us</h5>
+                        <div class="w-16 border-b-4 rounded-lg border-green-400 "></div>
+                        <p class="text-xs text-gray-400 leading-5 font-medium">We know how to sell your farmlands faster
+                            and at better prices. We put active efforts to obtain all necessary documents and verify
+                            initial legal claims with regard to farmland. We stand with you throughout the process and
+                            offer our completed support to analyze, verify & issue all the actual documents for farmland
+                            to be sold. Eventually, we ensure Hassle-free and sale-ready lands.</p>
+                    </div>
+                </div>
+                <div class="relative flex space-x-5 items-start">
+                    <img src="assets/section4-icon1.png" class="h-8 left-3 absolute w-8" alt="">
+                    <div class="relative left-10 flex flex-col space-y-4 w-8/12">
+                        <h5 class="text-lg font-bold ">Propoer structure post entire detail</h5>
+                        <div class="w-16 border-b-4 rounded-lg border-green-400 "></div>
+                        <p class="text-xs text-gray-400 leading-5 font-medium">We understand how frustating it could be
+                            to have continuous irrelevant inquiries about your farm land details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Section -->
+    <div class="relative pt-52 p-10 md:p-32">
+        <div class="flex items-center md:flex-row flex-col justify-center ">
+            <div class="w-full md:w-1/2">
+                <div class="relative mb-10">
+                    <img src="assets/section5-image.png" class="mx-auto md:mx-0 relative md:left-14 w-56 md:w-80">
+                </div>
+
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="relative mb-10">
+                    <p class="relative text-center md:text-left md:left-14 text-green-400 font-semibold text-sm">Are you a Buyer?</p>
+                    <h1 class="relative text-center md:text-left md:left-14 text-4xl leading-10 font-bold">Hunt your
+                        dream<br>farmland hassle-free</h1>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-12">
+            <div class="col-span-12 md:col-span-6 space-y-10">
+                <div class="relative flex space-x-5 items-start">
+                    <img src="assets/section4-icon1.png" class="h-8 left-3 absolute w-8" alt="">
+                    <div class="relative left-10 flex flex-col space-y-4 w-8/12">
+                        <h5 class="text-lg font-bold ">Virtual Tour</h5>
+                        <div class="w-16 border-b-4 rounded-lg border-green-400 "></div>
+                        <p class="text-xs text-gray-400 leading-5 font-medium">Don't lost your preciouse money on
+                            distrustful agengs. Don't waste your valuable time on
+                            several inquieres.Don't put too much effort into selling advertisements. Don't let
+                            multiple
+                            inspections steal yur valuable time. We're here to make your selling process less
+                            stressful.
+                            We work on your behalf to close the best deals much faster than ever.</p>
+                    </div>
+                </div>
+                <div class="relative flex space-x-5 items-start">
+                    <img src="assets/section4-icon1.png" class="h-8 left-3 absolute w-8" alt="">
+                    <div class="relative left-10 flex flex-col space-y-4 w-8/12">
+                        <h5 class="text-lg font-bold ">Buying is a lot more easier</h5>
+                        <div class="w-16 border-b-4 rounded-lg border-green-400 "></div>
+                        <p class="text-xs text-gray-400 leading-5 font-medium">Don't lost your preciouse money on
+                            distrustful agengs. Don't waste your valuable time on
+                            several inquieres.Don't put too much effort into selling advertisements. Don't let
+                            multiple
+                            inspections steal yur valuable time. We're here to make your selling process less
+                            stressful.
+                            We work on your behalf to close the best deals much faster than ever.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 space-y-10">
+                <div class="relative flex space-x-5 items-start">
+                    <img src="assets/section4-icon1.png" class="h-8 left-3 absolute w-8" alt="">
+                    <div class="relative left-10 flex flex-col space-y-4 w-8/12">
+                        <h5 class="text-lg font-bold ">Smartest search with Farmscout</h5>
+                        <div class="w-16 border-b-4 rounded-lg border-green-400 "></div>
+                        <p class="text-xs text-gray-400 leading-5 font-medium">Don't lost your preciouse money on
+                            distrustful agengs. Don't waste your valuable time on
+                            several inquieres.Don't put too much effort into selling advertisements. Don't let
+                            multiple
+                            inspections steal yur valuable time. We're here to make your selling process less
+                            stressful.
+                            We work on your behalf to close the best deals much faster than ever.</p>
+                    </div>
+                </div>
+                <div class="relative flex space-x-5 items-start">
+                    <img src="assets/section4-icon1.png" class="h-8 left-3 absolute w-8" alt="">
+                    <div class="relative left-10 flex flex-col space-y-4 w-8/12">
+                        <h5 class="text-lg font-bold ">Dedicated support</h5>
+                        <div class="w-16 border-b-4 rounded-lg border-green-400 "></div>
+                        <p class="text-xs text-gray-400 leading-5 font-medium">Don't lost your preciouse money on
+                            distrustful agengs. Don't waste your valuable time on
+                            several inquieres.Don't put too much effort into selling advertisements. Don't let
+                            multiple
+                            inspections steal yur valuable time. We're here to make your selling process less
+                            stressful.
+                            We work on your behalf to close the best deals much faster than ever.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="w-full relative p-2 bg-green-400 bottom-0">
+        <h2 class="text-white text-lg font-semibold text-center">Copyright 2020 Farmscout</h2>
+    </footer>
+
+    <script type="module" src="index.js"></script>
+    <script type="module" src="main.js"></script>
+
+</body>
+
+</html>
