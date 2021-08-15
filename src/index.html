@@ -8,6 +8,43 @@
 </head>
 <body>
     <!-- Init The Project -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex mt-5 justify-between items-center">
+            <img class="w-36 md:w-60 h-full" src="assets/GoCollect.png" alt="">
+            <div class="hidden md:flex text-2xl tracking-wide space-x-8">
+                <a href="#">Sign</a>
+                <a href="#">Register</a>
+                <a href="#">Sell</a>
+                <a href="#">Comics</a>
+                <a href="#">Blog</a>
+                <a href="#">Swag</a>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <img class="w-4 h-full" src="assets/facebook.png" alt="">
+                <img class="w-8 h-full" src="assets/instagram.png" alt="">
+                <img class="w-8 h-full" src="assets/twitter.png" alt="">
+            </div>
+            <div class="lg:hidden block transform transition ease-in hover:-translate-y-1 cursor-pointer" onclick="toggleNavMobile()">
+                <img src="assets/menu-mobile-icon.svg" class=" w-6">
+            </div>
+        </nav>
+        <div id="nav-mobile" class="hidden absolute w-full mt-2 z-10  bg-gray-100 p-2 left-0 right-0 lg:hidden">
+            <div class="flex flex-col space-y-3 mb-3 items-center">
+                <a href="#">Sign</a>
+                <a href="#">Register</a>
+                <a href="#">Sell</a>
+                <a href="#">Comics</a>
+                <a href="#">Blog</a>
+                <a href="#">Swag</a>
+            </div>
+            <div class="flex mt-5 justify-center space-x-3">
+                <img class="w-2 h-full" src="assets/facebook.png" alt="">
+                <img class="w-5 h-full" src="assets/instagram.png" alt="">
+                <img class="w-5 h-full" src="assets/twitter.png" alt="">
+            </div>
+        </div>
+    </div>
     <script src="index.js" type="module"></script>
+    <script src="main.js"></script>
 </body>
 </html>
