@@ -5,13 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Go Collect</title>
-    <link rel="stylesheet" href="https://comics.gocollect.com/plugins/wm/assets/css/entypo.css">
+    <title>GoCollect Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta
+        description="A comic book investor's best friend - tracking the value of comics in near real-time. The stock ticker for CGC &amp; CBCS graded comic books." />
+    <meta tpl="guide/index" />
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+    <link rel="stylesheet" href="assets/css/entypo.css">
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/socicon@3.0.5/css/socicon.min.css">
+    <style>
+        /*Just to make it not full width, for this example*/
+
+
+        /*Edit, forgot this important bit.  This keeps the other slides visible*/
+    </style>
 </head>
 
 <body class="font-rubik">
@@ -48,10 +59,10 @@
                 <a href="#" class="hover:text-green-600">Blog</a>
                 <a href="#" class="hover:text-green-600">Swag</a>
             </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#"><img class="w-4 h-full" src="assets/facebook.png" alt=""></a>
-                <a href="#"><img class="w-8 h-full" src="assets/instagram.png" alt=""></a>
-                <a href="#"><img class="w-8 h-full" src="assets/twitter.png" alt=""></a>
+            <div class="hidden md:flex items-center mt-1 space-x-9">
+                <a href="#"> <i class="socicon-facebook" style="font-size: 27px;"></i></a>
+                <a href="#"> <i class="text-3xl socicon-instagram"></i></a>
+                <a href="#"> <i class="text-3xl socicon-twitter"></i></a>
             </div>
             <div class="lg:hidden block transform transition ease-in hover:-translate-y-1 cursor-pointer"
                 id="toggleNavMobile">
@@ -88,10 +99,10 @@
                 <a href="#" class="hover:text-green-600">Blog</a>
                 <a href="#" class="hover:text-green-600">Swag</a>
             </div>
-            <div class="flex mt-5 justify-center space-x-3">
-                <a href="#"><img class="w-2 h-full" src="assets/facebook.png" alt=""></a>
-                <a href="#"><img class="w-5 h-full" src="assets/instagram.png" alt=""></a>
-                <a href="#"><img class="w-5 h-full" src="assets/twitter.png" alt=""></a>
+            <div class="flex mt-5 justify-center items-center space-x-5">
+                <a href="#"> <i class="text-base socicon-facebook"></i></a>
+                <a href="#"> <i class="text-lg socicon-instagram"></i></a>
+                <a href="#"> <i class="text-lg socicon-twitter"></i></a>
             </div>
         </div>
         <!-- NAVBAR END -->
@@ -190,8 +201,8 @@
                     <div id="bronze" class="animate-fade-in-down">
                         Bronze Tab
                     </div>
-                    <div id="silver" class="animate-fade-in-down">
-                        <div id="slickTab1">
+                    <div id="silver" class="relative animate-fade-in-down">
+                        <div id="slickTab1" class="">
                             <!-- Carousel Item #1 -->
                             <div class="p-1 hover:-translate-y-1 transition transform cursor-pointer">
                                 <div class="flex flex-col items-center space-y-2">
@@ -200,7 +211,7 @@
                                         #1</h2>
                                     <img class="w-40" src="assets/comics/silver-1.webp">
                                     <div class="flex">
-                                        9.8 <i class="icon-calculator"></i> $160.000
+                                        9.8 <i class="icon-calculator"></i> $160,000
                                     </div>
                                     <p class="text-blue-500 text-sm md:text-base">Amazing Spider-Man #50</p>
                                     <button class="rounded-md border-2 p-2 space-x-2 text-blue-500"><i
@@ -217,7 +228,7 @@
                                         #2</h2>
                                     <img class="w-40" src="assets/comics/silver-2.webp">
                                     <div class="flex">
-                                        9.8 <i class="icon-calculator"></i> $290.000
+                                        9.8 <i class="icon-calculator"></i> $29,000
                                     </div>
                                     <p class="text-blue-500 text-sm md:text-base">Fantastic Four #67</p>
                                     <button class="rounded-md border-2 p-2 space-x-2 text-blue-500"><i
@@ -234,7 +245,7 @@
                                         #3</h2>
                                     <img class="w-40" src="assets/comics/silver-3.webp">
                                     <div class="flex">
-                                        9.8 <i class="icon-calculator"></i> $180.000
+                                        9.8 <i class="icon-calculator"></i> $180,000
                                     </div>
                                     <p class="text-blue-500 text-sm md:text-base">Fantastic Four #52</p>
                                     <button class="rounded-md border-2 p-2 space-x-2 text-blue-500"><i
@@ -251,7 +262,7 @@
                                         #4</h2>
                                     <img class="w-40" src="assets/comics/silver-4.webp">
                                     <div class="flex">
-                                        9.8 <i class="icon-calculator"></i> $76.000
+                                        9.8 <i class="icon-calculator"></i> $76,000
                                     </div>
                                     <p class="text-blue-500 text-sm md:text-base">Avengers #8</p>
                                     <button class="rounded-md border-2 p-2 space-x-2 text-blue-500"><i
@@ -260,6 +271,15 @@
                                     </button>
                                 </div>
                             </div>
+                        </div>
+                        <!-- Next and Prev -->
+                        <div
+                            class="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-between">
+                            <em style="cursor: pointer;"
+                                class="prevSlick hover:-translate-x-1 md:left-0 transform transition"><i
+                                    class='-ml-14 md:ml-0 text-7xl text-gray-500 icon-chevron-left'></i></em>
+                            <em style="cursor: pointer;" class="nextSlick hover:translate-x-1 transform transition"><i
+                                    class='-mr-14 md:mr-0 text-7xl text-gray-500 icon-chevron-right'></i></em>
                         </div>
 
                     </div>
@@ -273,7 +293,7 @@
     <div class="bg-gray-50 space-y-8 py-10">
         <div class="text-center font-normal">
             <h1 class="text-2xl md:text-3xl  text-green-500">Become A Member</h1>
-            <p class=" text-gray-400">Unlock complete & unlimited access to all feature</p>
+            <p class=" text-gray-400">Unlock complete & unlimited access to all features</p>
         </div>
         <div class="w-full space-y-1 my-4">
             <div x-data={show:false} class="rounded-sm">
@@ -440,7 +460,7 @@
     <!-- BECOME A MEMBER END -->
     <!-- BLOG -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="py-5">
+        <div class="py-5 relative">
             <div class="text-center font-normal">
                 <h1 class="text-2xl md:text-3xl  text-green-500">Amazing Reads</h1>
                 <p class=" text-gray-400">Check out multiple new posts and commentary daily</p>
@@ -450,7 +470,9 @@
                 <div class="p-8 hover:-translate-y-1 transition transform cursor-pointer">
                     <div class="flex flex-col items-center space-y-2">
                         <img class="mx-auto rounded-md" src="assets/blog/blog1.jpg">
-                        <p class="m-0"><small class="text-gray-500"><em>Aug 14, 2021</em> &nbsp; As we’ve all seen, the
+                        <p class="m-0"><small class="text-gray-500">
+                                <em>Aug 14, 2021</em>
+                                As we’ve all seen, the
                                 collectibles market has been thriving for the last year during the worldwide pandemic.
                                 Now,
                                 to be more specific, the comic market has been on an upward rise…
@@ -465,12 +487,11 @@
                     <div class="flex flex-col items-center space-y-2">
                         <img class="mx-auto rounded-md" src="assets/blog/blog2.jpg">
                         <p class="m-0"><small class="text-gray-500">
-                                <em>Aug 14, 2021</em>
-                                As we’ve all seen, the
-                                collectibles market has been thriving for the last year during the worldwide pandemic.
-                                Now,
-                                to be more specific, the comic market has been on an upward rise…
-                                The post Are We Hitting a Comic Wall? appeared first on GoCollect.
+                                <em>Aug 13, 2021</em>
+                                The rumors continue to swirl around Wakanda Forever, and the word is that Atlantis will
+                                invade the sequel. Here are three Atlanteans who could join Namor in the MCU. Marvel
+                                Studios knows…
+                                The post Wakanda Forever Spec: Are the Atlanteans Coming? appeared first on GoCollect.
                             </small>
                         </p>
 
@@ -481,11 +502,11 @@
                     <div class="flex flex-col items-center space-y-2">
                         <img class="mx-auto rounded-md" src="assets/blog/blog3.jpg">
                         <p class="m-0"><small class="text-gray-500">
-                                <em>Aug 13, 2021</em>
-                                The rumors continue to swirl around Wakanda Forever, and the word is that Atlantis will
-                                invade the sequel. Here are three Atlanteans who could join Namor in the MCU. Marvel
-                                Studios knows… The post Wakanda Forever Spec: Are the Atlanteans Coming? appeared first
-                                on GoCollect.
+                                <em>Aug 12, 2021</em>
+                                The original MS. Marvel and Spider-Woman dominated the sales this week in an all-Marvel
+                                Comics top-five movers and shakers. Here is a look at this week's Hottest Comics! The
+                                women ruled the... The post Hottest Comics for 8/12: From Ms. Marvel to Howard the Duck
+                                appeared first on GoCollect.
                             </small>
                         </p>
 
@@ -504,6 +525,14 @@
                         </p>
                     </div>
                 </div>
+            </div>
+            <!-- Next and Prev -->
+            <div
+                class="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-between">
+                <em style="cursor: pointer;" class="prevSlickBlog hover:-translate-x-1 md:left-0 transform transition"><i
+                        class='ml-4 md:-ml-12 text-7xl text-gray-500 icon-chevron-left'></i></em>
+                <em style="cursor: pointer;" class="nextSlickBlog hover:translate-x-1 transform transition"><i
+                        class='mr-4 md:-mr-12 text-7xl text-gray-500 icon-chevron-right'></i></em>
             </div>
         </div>
     </div>
@@ -560,16 +589,18 @@
                         <i class="socicon-pinterest"></i>
                     </div>
                     <div class="space-y-2">
-                        <h3 class="font-semibold text-gray-500 text-xs">Copyright © 2010-2021 GoCollect.com & GoCollect,
+                        <h3 class="font-semibold text-gray-400 text-xs">Copyright © 2010-2021 GoCollect.com & GoCollect,
                             LLC.</h3>
-                        <p class="text-xs text-gray-400">All Rights Reserved. All Item images are used solely for
+                        <p class="text-xs text-gray-300">All Rights Reserved. All Item images are used solely for
                             identification purposes.<br>All rights to item images reserved by their respective copyright
                             holders.
                         </p>
                     </div>
-                    <div class="flex items-center justify-end">
-                        <img class="h-full" src="assets/comodo_secure_seal_113x59_transp.png" alt="">
-                        <img class="h-full" src="assets/blue-seal-200-42-gocollect-807244.png" alt="">
+                    <div class="flex items-center  space-x-5 pt-5  justify-end">
+                        <img class="h-full w-28" src="assets/comodo_secure_seal_113x59_transp.png" alt="">
+                        <a
+                            href="https://www.bbb.org/us/nc/charlotte/profile/collectibles/gocollect-0473-807244#sealclick"><img
+                                class="h-full w-32" src="assets/blue-seal-200-42-gocollect-807244.png" alt=""></a>
 
                     </div>
                 </div>

@@ -7,8 +7,10 @@ $(document).ready(() => {
     {
       dots: true,
       slidesToShow: 3,
-      infinite: true,
-      centerMode: true,
+      slidesToScroll:1,
+      prevArrow: $('.prevSlick'),
+      nextArrow: $('.nextSlick'),
+      // centerMode: true,
       // autoplay:true
       responsive: [
         {
@@ -17,8 +19,6 @@ $(document).ready(() => {
             slidesToShow: 3,
             slidesToScroll: 3,
             dots: true,
-            centerMode: true,
-
           }
         },
         {
@@ -26,7 +26,6 @@ $(document).ready(() => {
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
-            centerMode: true,
 
           }
         },
@@ -49,6 +48,9 @@ $(document).ready(() => {
     {
       dots: true,
       slidesToShow: 3,
+      slidesToScroll:1,
+      prevArrow: $('.prevSlickBlog'),
+      nextArrow: $('.nextSlickBlog'),
       // autoplay:true
       responsive: [
         {
