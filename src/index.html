@@ -59,12 +59,32 @@
             </div>
         </nav>
         <div id="nav-mobile"
-            class="hidden absolute w-full mt-2 z-10  animate-fade-in-down bg-gray-100 p-2 left-0 right-0 lg:hidden">
+            class="hidden absolute w-full mt-2 z-10  animate-fade-in-down bg-gray-50 rounded-md shadow-lg p-2 left-0 right-0 lg:hidden">
             <div class="flex flex-col space-y-3 mb-3 items-center">
                 <a href="#" class="hover:text-green-600">Sign In</a>
                 <a href="#" class="hover:text-green-600">Register</a>
                 <a href="#" class="hover:text-green-600">Sell</a>
-                <a href="#" class="hover:text-green-600">Comics</a>
+                <!-- DROPDOWN MENU -->
+                <div x-data="{ dropdownOpen: false }" class="cursor-pointer hover:text-green-600 relative">
+                    <p @click="dropdownOpen = !dropdownOpen">Comics<i class="icon-chevron-down"></i></p>
+
+                    <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10">
+                    </div>
+
+                    <div x-show="dropdownOpen"
+                        class="absolute left-1/2 transform -translate-x-1/2  mt-2 py-2 w-52 bg-white rounded-md shadow-xl z-20">
+                        <a href="#"
+                            class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-green-500 hover:text-white">
+                            sample-1
+                        </a>
+                        <a href="#"
+                            class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-green-500 hover:text-white">
+                            sample-2
+                        </a>
+
+                    </div>
+                </div>
+                <!-- DROPDOWN MENU END -->
                 <a href="#" class="hover:text-green-600">Blog</a>
                 <a href="#" class="hover:text-green-600">Swag</a>
             </div>
