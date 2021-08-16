@@ -18,51 +18,73 @@
     <!-- Init The Project -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- NAVBAR START -->
-        <nav class="flex mt-10 justify-between items-center">
+        <nav class="flex mt-3 md:mt-10 justify-between items-center">
             <img class="w-36 md:w-60 h-full" src="assets/GoCollect.png" alt="">
             <div class="hidden md:flex text-2xl tracking-wide font-extralight space-x-8">
-                <a href="#">Sign In</a>
-                <a href="#">Register</a>
-                <a href="#">Sell</a>
-                <a href="#">Comics</a>
-                <a href="#">Blog</a>
-                <a href="#">Swag</a>
+                <a href="#" class="hover:text-green-600">Sign In</a>
+                <a href="#" class="hover:text-green-600">Register</a>
+                <a href="#" class="hover:text-green-600">Sell</a>
+                <!-- DROPDOWN MENU -->
+                <div x-data="{ dropdownOpen: false }" class="cursor-pointer hover:text-green-600 relative">
+                    <p @click="dropdownOpen = !dropdownOpen">Comics<i class="icon-chevron-down"></i></p>
+
+                    <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10">
+                    </div>
+
+                    <div x-show="dropdownOpen"
+                        class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
+                        <a href="#"
+                            class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-green-500 hover:text-white">
+                            sample-1
+                        </a>
+                        <a href="#"
+                            class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-green-500 hover:text-white">
+                            sample-2
+                        </a>
+
+                    </div>
+                </div>
+                <!-- DROPDOWN MENU END -->
+                <a href="#" class="hover:text-green-600">Blog</a>
+                <a href="#" class="hover:text-green-600">Swag</a>
             </div>
             <div class="hidden md:flex space-x-6">
-                <img class="w-4 h-full" src="assets/facebook.png" alt="">
-                <img class="w-8 h-full" src="assets/instagram.png" alt="">
-                <img class="w-8 h-full" src="assets/twitter.png" alt="">
+                <a href="#"><img class="w-4 h-full" src="assets/facebook.png" alt=""></a>
+                <a href="#"><img class="w-8 h-full" src="assets/instagram.png" alt=""></a>
+                <a href="#"><img class="w-8 h-full" src="assets/twitter.png" alt=""></a>
             </div>
             <div class="lg:hidden block transform transition ease-in hover:-translate-y-1 cursor-pointer"
                 id="toggleNavMobile">
                 <img src="assets/menu-mobile-icon.svg" class=" w-6">
             </div>
         </nav>
-        <div id="nav-mobile" class="hidden absolute w-full mt-2 z-10  bg-gray-100 p-2 left-0 right-0 lg:hidden">
+        <div id="nav-mobile"
+            class="hidden absolute w-full mt-2 z-10  animate-fade-in-down bg-gray-100 p-2 left-0 right-0 lg:hidden">
             <div class="flex flex-col space-y-3 mb-3 items-center">
-                <a href="#">Sign</a>
-                <a href="#">Register</a>
-                <a href="#">Sell</a>
-                <a href="#">Comics</a>
-                <a href="#">Blog</a>
-                <a href="#">Swag</a>
+                <a href="#" class="hover:text-green-600">Sign In</a>
+                <a href="#" class="hover:text-green-600">Register</a>
+                <a href="#" class="hover:text-green-600">Sell</a>
+                <a href="#" class="hover:text-green-600">Comics</a>
+                <a href="#" class="hover:text-green-600">Blog</a>
+                <a href="#" class="hover:text-green-600">Swag</a>
             </div>
             <div class="flex mt-5 justify-center space-x-3">
-                <img class="w-2 h-full" src="assets/facebook.png" alt="">
-                <img class="w-5 h-full" src="assets/instagram.png" alt="">
-                <img class="w-5 h-full" src="assets/twitter.png" alt="">
+                <a href="#"><img class="w-2 h-full" src="assets/facebook.png" alt=""></a>
+                <a href="#"><img class="w-5 h-full" src="assets/instagram.png" alt=""></a>
+                <a href="#"><img class="w-5 h-full" src="assets/twitter.png" alt=""></a>
             </div>
         </div>
         <!-- NAVBAR END -->
         <!-- TITLE & FORM ACTION -->
-        <div class="flex items-center space-y-8 h-96 justify-center flex-col">
-            <div class="text-center">
+        <div class="flex items-center space-y-8 py-20 md:py-0  md:h-96 justify-center flex-col">
+
+            <div class="text-center animate-fade-in-up">
                 <h1 class="text-3xl tracking-wide text-green-600">Comic Book Price Guide</h1>
-                <h5 class="text-lg tracking-wide text-gray-600">The stock ticker for comic books. GoCollect track sales
-                    of comics graded by
-                    CGC & CBCS</h5>
+                <h5 class="text-lg tracking-wide text-gray-600">The stock ticker for comic books. GoCollect tracks sales
+                    of comics graded by CGC<sup>®</sup> & CBCS<sup>®</sup></h5>
             </div>
-            <div class="flex shadow-md w-9/12 space-x-3">
+            <div
+                class="flex md:flex-row flex-col shadow-md w-9/12 space-y-3 md:space-y-0 md:space-x-3 animate-fade-in-up">
                 <!-- CARD for Search -->
                 <div class="w-full border-2 rounded-md border-green-500 md:w-6/12">
                     <div class="p-2 text-white flex items-center space-x-2 bg-green-500">
@@ -88,7 +110,7 @@
                     <div class="p-2 flex items-center justify-between bg-blue-500">
                         <div class="flex text-white items-center  space-x-2">
                             <i class="icon-archive"></i>
-                            <span>CGC Cert Scan/Lookup</span>
+                            <span> CGC<sup>®</sup> Cert Scan/Lookup</span>
                         </div>
                         <i class="icon-help-with-circle text-white text-xs pb-2"></i>
                     </div>
@@ -139,28 +161,28 @@
 
                 <!-- Tab Contents -->
                 <div id="tab-contents" class="pr-10 pl-10">
-                    <div id="new">
+                    <div id="new" class="animate-fade-in-down">
                         New Tab
                     </div>
-                    <div id="modern" class="hidden">
+                    <div id="modern" class="animate-fade-in-down">
                         Modern tab
                     </div>
-                    <div id="bronze" class="hidden">
+                    <div id="bronze" class="animate-fade-in-down">
                         Bronze Tab
                     </div>
-                    <div id="silver" class="hidden">
+                    <div id="silver" class="animate-fade-in-down">
                         <div id="slickTab1">
                             <!-- Carousel Item #1 -->
-                            <div>
+                            <div class="p-1 hover:-translate-y-1 transition transform cursor-pointer">
                                 <div class="flex flex-col items-center space-y-2">
                                     <h2
                                         class="bg-yellow-500 rounded-full w-7 h-7 flex justify-center items-center text-white text-xs font-semibold">
                                         #1</h2>
-                                    <img class="w-40" src="assets/com1.jpg">
+                                    <img class="w-40" src="assets/comics/silver-1.webp">
                                     <div class="flex">
                                         9.8 <i class="icon-calculator"></i> $160.000
                                     </div>
-                                    <p class="text-blue-500">Amazing Spider-Man #50</p>
+                                    <p class="text-blue-500 text-sm md:text-base">Amazing Spider-Man #50</p>
                                     <button class="rounded-md border-2 p-2 space-x-2 text-blue-500"><i
                                             class="icon-eye"></i>
                                         <el>Watch</el>
@@ -168,16 +190,16 @@
                                 </div>
                             </div>
                             <!-- Carousel Item #2 -->
-                            <div>
+                            <div class="p-1 hover:-translate-y-1 transition transform cursor-pointer">
                                 <div class="flex flex-col items-center space-y-2">
                                     <h2
                                         class="bg-yellow-500 rounded-full w-7 h-7 flex justify-center items-center text-white text-xs font-semibold">
                                         #2</h2>
-                                    <img class="w-40" src="assets/com1.jpg">
+                                    <img class="w-40" src="assets/comics/silver-2.webp">
                                     <div class="flex">
-                                        9.8 <i class="icon-calculator"></i> $160.000
+                                        9.8 <i class="icon-calculator"></i> $290.000
                                     </div>
-                                    <p class="text-blue-500">Amazing Spider-Man #50</p>
+                                    <p class="text-blue-500 text-sm md:text-base">Fantastic Four #67</p>
                                     <button class="rounded-md border-2 p-2 space-x-2 text-blue-500"><i
                                             class="icon-eye"></i>
                                         <el>Watch</el>
@@ -185,16 +207,16 @@
                                 </div>
                             </div>
                             <!-- Carousel Item #3 -->
-                            <div>
+                            <div class="p-1 hover:-translate-y-1 transition transform cursor-pointer">
                                 <div class="flex flex-col items-center space-y-2">
                                     <h2
                                         class="bg-yellow-500 rounded-full w-7 h-7 flex justify-center items-center text-white text-xs font-semibold">
                                         #3</h2>
-                                    <img class="w-40" src="assets/com1.jpg">
+                                    <img class="w-40" src="assets/comics/silver-3.webp">
                                     <div class="flex">
-                                        9.8 <i class="icon-calculator"></i> $160.000
+                                        9.8 <i class="icon-calculator"></i> $180.000
                                     </div>
-                                    <p class="text-blue-500">Amazing Spider-Man #50</p>
+                                    <p class="text-blue-500 text-sm md:text-base">Fantastic Four #52</p>
                                     <button class="rounded-md border-2 p-2 space-x-2 text-blue-500"><i
                                             class="icon-eye"></i>
                                         <el>Watch</el>
@@ -202,16 +224,16 @@
                                 </div>
                             </div>
                             <!-- Carousel Item #4 -->
-                            <div>
+                            <div class="p-1 hover:-translate-y-1 transition transform cursor-pointer">
                                 <div class="flex flex-col items-center space-y-2">
                                     <h2
                                         class="bg-yellow-500 rounded-full w-7 h-7 flex justify-center items-center text-white text-xs font-semibold">
                                         #4</h2>
-                                    <img class="w-40" src="assets/com1.jpg">
+                                    <img class="w-40" src="assets/comics/silver-4.webp">
                                     <div class="flex">
-                                        9.8 <i class="icon-calculator"></i> $160.000
+                                        9.8 <i class="icon-calculator"></i> $76.000
                                     </div>
-                                    <p class="text-blue-500">Amazing Spider-Man #50</p>
+                                    <p class="text-blue-500 text-sm md:text-base">Avengers #8</p>
                                     <button class="rounded-md border-2 p-2 space-x-2 text-blue-500"><i
                                             class="icon-eye"></i>
                                         <el>Watch</el>
@@ -229,7 +251,10 @@
     </div>
     <!-- BECOME A MEMBER -->
     <div class="bg-gray-50 space-y-8 py-10">
-        <h1 class="text-center text-3xl text-green-500">Become A Member</h1>
+        <div class="text-center font-normal">
+            <h1 class="text-2xl md:text-3xl  text-green-500">Become A Member</h1>
+            <p class=" text-gray-400">Unlock complete & unlimited access to all feature</p>
+        </div>
         <div class="w-full space-y-1 my-4">
             <div x-data={show:false} class="rounded-sm">
                 <div class="border border-b-0 bg-gray-100 px-6 py-3" id="headingOne">
@@ -239,7 +264,7 @@
                         <el>How It Works</el>
                     </button>
                 </div>
-                <div x-show="show" class="border border-b-0 px-10 py-6">
+                <div x-show="show" class="border border-b-0 px-10 py-6 animate-fade-in-down">
                     We monitor the fire hose of online comic book sales across various marketplaces and report on the
                     sales of CGC and CBCS graded books in our comics price guide. We only monitor actual sales; not just
                     sale listings. For each sale discovered, we match it to the specific comic in our massive database
@@ -259,7 +284,7 @@
                         <el>We employ actual humans</el>
                     </button>
                 </div>
-                <div x-show="show" class="border border-b-0 px-10 py-6">
+                <div x-show="show" class="border border-b-0 px-10 py-6 animate-fade-in-down">
                     Although we use API technologies to pull in giant piles of sales data, we employ humans to organize
                     that data and assign it to individual comics in our database. Therefore, mistakes can occasionally
                     occur. For such instances, we've integrated a flagging system. Any member can flag a sale that they
@@ -275,7 +300,7 @@
                         <el>Qualifications and reported prices</el>
                     </button>
                 </div>
-                <div x-show="show" class="border border-b-0 px-10 py-6">
+                <div x-show="show" class="border border-b-0 px-10 py-6 animate-fade-in-down">
                     We follow a strict set of guidelines in order to deliver the best possible comic book values. We
                     make every possible effort to only report on the price paid for individual comics. Some examples:
                 </div>
@@ -288,7 +313,7 @@
                         <el>Examples</el>
                     </button>
                 </div>
-                <div x-show="show" class="border border-b-0 px-10 py-6">
+                <div x-show="show" class="border border-b-0 px-10 py-6 animate-fade-in-down">
                     <ul class="list-disc pl-3" style="font-size:0.875rem">
                         <li>When more than one comic is offered in a particular listing, the entire sale is disregarded.
                         </li>
@@ -302,7 +327,7 @@
             </div>
         </div>
         <div class="col-span-12 flex md:flex-row space-y-10 md:space-y-0 flex-col justify-center md:space-x-8">
-            <div class="md:w-3/12 space-y-6 p-10 border-2 border-blue-300 rounded-md">
+            <div class="md:w-3/12 mx-5 md:mx-0 space-y-6 p-10 border-2 border-blue-300 rounded-md">
                 <div>
                     <h1 class="font-rubik text-blue-400 text-xl">FREE MEMBERSHIP</h1>
                     <p class="font-rubik text-sm text-gray-500">Register to access additional features</p>
@@ -322,7 +347,7 @@
                         </li>
                         <li class="flex space-x-4"><img src="assets/section5-cross.svg"><span>Detailed Watch
                                 Alerts</span></li>
-                        <li class="flex space-x-4"><img src="assets/section5-cross.svg"><span>Solid Prices
+                        <li class="flex space-x-4"><img src="assets/section5-cross.svg"><span>Sold Prices
                                 Realized*</span></li>
                         <li class="flex space-x-4"><img src="assets/section5-cross.svg"><span>Full Size Sales
                                 Images*</span></li>
@@ -339,21 +364,22 @@
                         <h2 class="text-gray-600 text-2xl">$0</h2>
                         <h5 class="text-sm text-gray-600">No credit card required</h5>
                     </div>
-                    <button class="p-2 px-4 bg-blue-500 shadow-lg rounded-md text-white">
+                    <button
+                        class="p-2 px-4 bg-blue-500 shadow-lg rounded-md text-white transform transition hover:-translate-y-1">
                         <el>Get Started</el><i class="icon-chevron-right"></i>
                     </button>
                 </div>
 
             </div>
 
-            <div class="md:w-3/12 space-y-6 p-10 border-2 bg-green-400 border-green-300 rounded-md">
+            <div class="md:w-3/12 mx-5 md:mx-0 space-y-6 p-10 border-2 bg-green-400 border-green-300 rounded-md">
                 <div>
                     <h1 class="font-rubik text-white text-xl">PREMIUM MEMBERSHIP</h1>
-                    <p class="font-rubik text-sm text-white">Register to access additional features</p>
+                    <p class="font-rubik text-sm text-white">Unlock complete & unlimited access</p>
                 </div>
                 <div>
                     <ul class="space-y-4 text-white font-medium">
-                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>High-Level Sales
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Comprehensive Sales
                                 Data</span></li>
                         <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Watch Unlimited
                                 Comics</span></li>
@@ -365,7 +391,7 @@
                         </li>
                         <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Detailed Watch
                                 Alerts</span></li>
-                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Solid Prices
+                        <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Sold Prices
                                 Realized*</span></li>
                         <li class="flex space-x-4"><img src="assets/section5-check-white.svg"><span>Full Size Sales
                                 Images*</span></li>
@@ -382,7 +408,8 @@
                         <h2 class="text-white text-2xl">Only $9/month</h2>
                         <h5 class="text-sm text-white">or $89/year - Save 17%</h5>
                     </div>
-                    <button class="p-2 px-4 bg-white shadow-lg rounded-md text-green-500">
+                    <button
+                        class="p-2 px-4 bg-white shadow-lg rounded-md text-green-500 transform transition hover:-translate-y-1">
                         <el>Get Started</el><i class="icon-chevron-right"></i>
                     </button>
                 </div>
@@ -395,14 +422,14 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="py-5">
             <div class="text-center font-normal">
-                <h1 class="text-2xl md:text-3xl  text-green-600">Amazing Reads</h1>
+                <h1 class="text-2xl md:text-3xl  text-green-500">Amazing Reads</h1>
                 <p class=" text-gray-400">Check out multiple new posts and commentary daily</p>
             </div>
             <div id="slickBlog">
                 <!-- Carousel Item #1 -->
-                <div class="p-8">
+                <div class="p-8 hover:-translate-y-1 transition transform cursor-pointer">
                     <div class="flex flex-col items-center space-y-2">
-                        <img class="mx-auto" src="assets/blog1.jpg">
+                        <img class="mx-auto rounded-md" src="assets/blog/blog1.jpg">
                         <p class="m-0"><small class="text-gray-500"><em>Aug 14, 2021</em> &nbsp; As we’ve all seen, the
                                 collectibles market has been thriving for the last year during the worldwide pandemic.
                                 Now,
@@ -414,10 +441,12 @@
                     </div>
                 </div>
                 <!-- Carousel Item #2 -->
-                <div class="p-8">
+                <div class="p-8 hover:-translate-y-1 transition transform cursor-pointer">
                     <div class="flex flex-col items-center space-y-2">
-                        <img class="mx-auto" src="assets/blog1.jpg">
-                        <p class="m-0"><small class="text-gray-500"><em>Aug 14, 2021</em> &nbsp; As we’ve all seen, the
+                        <img class="mx-auto rounded-md" src="assets/blog/blog2.jpg">
+                        <p class="m-0"><small class="text-gray-500">
+                                <em>Aug 14, 2021</em>
+                                As we’ve all seen, the
                                 collectibles market has been thriving for the last year during the worldwide pandemic.
                                 Now,
                                 to be more specific, the comic market has been on an upward rise…
@@ -428,28 +457,29 @@
                     </div>
                 </div>
                 <!-- Carousel Item #3 -->
-                <div class="p-8">
+                <div class="p-8 hover:-translate-y-1 transition transform cursor-pointer">
                     <div class="flex flex-col items-center space-y-2">
-                        <img class="mx-auto" src="assets/blog1.jpg">
-                        <p class="m-0"><small class="text-gray-500"><em>Aug 14, 2021</em> &nbsp; As we’ve all seen, the
-                                collectibles market has been thriving for the last year during the worldwide pandemic.
-                                Now,
-                                to be more specific, the comic market has been on an upward rise…
-                                The post Are We Hitting a Comic Wall? appeared first on GoCollect.
+                        <img class="mx-auto rounded-md" src="assets/blog/blog3.jpg">
+                        <p class="m-0"><small class="text-gray-500">
+                                <em>Aug 13, 2021</em>
+                                The rumors continue to swirl around Wakanda Forever, and the word is that Atlantis will
+                                invade the sequel. Here are three Atlanteans who could join Namor in the MCU. Marvel
+                                Studios knows… The post Wakanda Forever Spec: Are the Atlanteans Coming? appeared first
+                                on GoCollect.
                             </small>
                         </p>
 
                     </div>
                 </div>
                 <!-- Carousel Item #4 -->
-                <div class="p-8">
+                <div class="p-8 hover:-translate-y-1 transition transform cursor-pointer">
                     <div class="flex flex-col items-center space-y-2">
-                        <img class="mx-auto" src="assets/blog1.jpg">
-                        <p class="m-0"><small class="text-gray-500"><em>Aug 14, 2021</em> &nbsp; As we’ve all seen, the
-                                collectibles market has been thriving for the last year during the worldwide pandemic.
-                                Now,
-                                to be more specific, the comic market has been on an upward rise…
-                                The post Are We Hitting a Comic Wall? appeared first on GoCollect.
+                        <img class="mx-auto rounded-md" src="assets/blog/blog4.jpeg">
+                        <p class="m-0"><small class="text-gray-500">
+                                <em>Aug 14, 2021</em>
+                                Star Wars flexed its muscle over the Hottest Comics, and...what's that? It's a bird.
+                                It's a plane. No, it's Alan Ladd, seen here taking the Oddball of the Week Award. There
+                                is...The post Trends & Oddballs: Star Wars and Alan Ladd appeared first on GoCollect.
                             </small>
                         </p>
                     </div>
@@ -461,9 +491,9 @@
     <!-- FOOTER -->
     <footer class="bg-gray-50 py-5">
         <div class="max-w-7xl space-y-4 mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex  justify-between">
-                <div class="flex w-5/12 space-x-8 text-blue-500">
-                    <div class="w-6/12 flex flex-col">
+            <div class="flex md:flex-row flex-col justify-between">
+                <div class="flex md:flex-row flex-col w-5/12 space-y-4 md:space-y-0 md:space-x-8 text-blue-500">
+                    <div class="w-full md:w-6/12 flex flex-col">
                         <a href="#">
                             Video Games Price Guide
                         </a>
@@ -483,7 +513,7 @@
                             Comic Grading
                         </a>
                     </div>
-                    <div class="w-6/12 flex flex-col">
+                    <div class="w-full md:w-6/12 flex flex-col">
                         <a href="#">
                             Careers @ GoCollect
                         </a>
@@ -510,8 +540,11 @@
                         <i class="socicon-pinterest"></i>
                     </div>
                     <div class="space-y-2">
-                        <h3 class="font-semibold text-gray-500 text-xs">Copyright c 2010-2021 GoCollect.com & GoCollect, LLC.</h3>
-                        <p class="text-xs text-gray-400">All Rights Reserved. All Item images are used solely for identification purposes.<br>All rights to item images reserved by their respective copyright holders.
+                        <h3 class="font-semibold text-gray-500 text-xs">Copyright © 2010-2021 GoCollect.com & GoCollect,
+                            LLC.</h3>
+                        <p class="text-xs text-gray-400">All Rights Reserved. All Item images are used solely for
+                            identification purposes.<br>All rights to item images reserved by their respective copyright
+                            holders.
                         </p>
                     </div>
                     <div class="flex items-center justify-end">
@@ -528,6 +561,10 @@
             </div>
         </div>
     </footer>
+    <button id="scrollToTop" class="hidden transform hover:-translate-y-1 transition fixed bottom-8 right-10"
+        title="Go to top"><i
+            class="icon-chevron-up bg-green-500 p-2 rounded-full text-white w-10 h-10 flex justify-center items-center"></i></button>
+
 
 
 
